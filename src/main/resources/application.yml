@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: AMD-Backend-parse
+    name: A:
 
   h2:
     console:
