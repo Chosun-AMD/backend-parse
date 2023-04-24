@@ -2,14 +2,11 @@ package com.backend.parse.Domain.Controller;
 
 import com.backend.parse.Domain.DTO.ResponseDataDTO;
 import com.backend.parse.Domain.Entity.DataEntity;
-import com.backend.parse.Domain.Service.DataService;
+import com.backend.parse.Domain.Service.ParseService;
 import org.modelmapper.ModelMapper;
-import org.modelmapper.convention.MatchingStrategies;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -19,11 +16,11 @@ import java.util.List;
 @RequestMapping("/parse")
 public class DataController {
     private final Environment env;
-    private final DataService dataService;
+    private final ParseService parseService;
 
-    public DataController(Environment env, DataService dataService) {
+    public DataController(Environment env, ParseService parseService) {
         this.env = env;
-        this.dataService = dataService;
+        this.parseService = parseService;
     }
 
     /**
@@ -48,7 +45,7 @@ public class DataController {
      */
     @GetMapping("/getAllData")
     public ResponseEntity<List<ResponseDataDTO>> getData() {
-        Iterable<DataEntity> dataList = dataService.getAllData();
+        Iterable<DataEntity> dataList = parseService.getAllEntities();
 
         List<ResponseDataDTO> result = new ArrayList<>();
         dataList.forEach(v -> {

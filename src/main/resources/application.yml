@@ -3,7 +3,16 @@ server:
 
 spring:
   application:
-    name: A:
+    name: AMD-Backend-parse
+
+  data:
+    mongodb:
+      uri: mongodb://117.16.17.166:27017/amd-db
+      host: 117.16.17.166
+      port: 27017
+      database: amd-db
+      username: amd-user
+      pwd: amd-user166#@
 
   h2:
     console:
@@ -32,9 +41,6 @@ eureka:
       service-url:
         defaultZone: http://localhost:8761/eureka/
       enabled: true
-
-jwt:
-  secret: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9eyJmb28iOiJiYXIiLCJpYXQiOjE0OTg1ODY1ODAsImV4cCI6MTQ5OTE5MTM4MH0YMSZ1PmRsjxyrtkLADayLJ99OEz0BzgpFZmeVXSRE8
 
 logging:
   level:
