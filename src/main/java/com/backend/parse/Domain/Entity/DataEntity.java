@@ -1,9 +1,9 @@
 package com.backend.parse.Domain.Entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+// import lombok.AllArgsConstructor;
+// import lombok.RequiredArgsConstructor;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
@@ -23,9 +23,9 @@ import java.util.TimeZone;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Document(collection="amd-db")
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Document(collection = "amd-data")
+
 // 가지고 있는 객체나 정보를 전송하거나 Database에 저장할 때 마샬링 작업을 위해 직렬화 해주어야 한다.
 public class DataEntity implements Serializable {
     @Id
@@ -37,6 +37,7 @@ public class DataEntity implements Serializable {
     private boolean isVuln;
     private Date uploadedAt;
 
+    @Builder
     public DataEntity(String id, String fileId, String fileName, int fileSize, String fileHash, boolean isVuln, String uploadedAtStr) throws ParseException {
         this.id = id;
         this.fileId = fileId;

@@ -17,7 +17,7 @@ import java.util.Arrays;
  * @since  : 1.0
  */
 public class DatabaseConnectTest {
-
+/*
     private String url = "117.16.17.166";
     private int port = 27017;
     private String db = "amd-db";
@@ -39,4 +39,5 @@ public class DatabaseConnectTest {
         MongoDatabase database = mongoClient.getDatabase("amd-db");
         mongoClient.close();
     }
+ */
 }
