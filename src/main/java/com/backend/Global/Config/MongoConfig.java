@@ -1,4 +1,4 @@
-package com.backend.parse;
+package com.backend.Global.Config;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.client.MongoClient;

@@ -1,9 +1,7 @@
 package com.backend.parse.Domain.Entity;
 
-import lombok.*;
-// import lombok.AllArgsConstructor;
-// import lombok.RequiredArgsConstructor;
 
+import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
@@ -25,7 +23,6 @@ import java.util.TimeZone;
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Document(collection = "amd-data")
-
 // 가지고 있는 객체나 정보를 전송하거나 Database에 저장할 때 마샬링 작업을 위해 직렬화 해주어야 한다.
 public class DataEntity implements Serializable {
     @Id

@@ -2,12 +2,10 @@ package com.backend.parse.Domain.Controller;
 
 import com.backend.parse.Domain.Entity.DataEntity;
 import com.backend.parse.Domain.Repository.ReactiveDataRepository;
-import com.backend.parse.MongoConfig;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
@@ -16,7 +14,7 @@ import reactor.core.publisher.Mono;
 import java.util.List;
 
 @RestController
-@RequestMapping("/react")
+@RequestMapping("/")
 @RequiredArgsConstructor
 @Slf4j
 public class DashboardController {
@@ -30,7 +28,7 @@ public class DashboardController {
      * @author : 황시준
      * @since : 1.0
      */
-    @GetMapping("/dashboard")
+    @PostMapping("/dashboard")
     public Mono<ResponseEntity<List<DataEntity>>> getMyDocuments() {
         Flux<DataEntity> dataEntityFlux = reactiveDataRepository.findAll();
         return dataEntityFlux.collectList()
