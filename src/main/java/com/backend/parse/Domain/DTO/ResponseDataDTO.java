@@ -12,8 +12,8 @@ import java.util.Date;
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResponseDataDTO {
-    private String id;
-    private String fileId;
+    private String id;      // 파일 ID(자동 생성)
+    private String fileId;  // 파일
     private String fileName;
     private int fileSize;
     private String fileHash;

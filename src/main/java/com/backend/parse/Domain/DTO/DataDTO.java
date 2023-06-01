@@ -15,9 +15,9 @@ import java.io.Serializable;
 @Getter
 @Setter
 public class DataDTO implements Serializable {
-    private String fildId;
-    private String fileName;
-    private Long fileSize;
+    private String fildId;      // mongodb에 저장 시 (자동 생성)
+    private String fileName;    // 파일 명
+    private Long fileSize;      // 파일 크기
     private String fileData;
     private Data uploadedAt;
 
